@@ -118,11 +118,18 @@ MOVIES SECTION
     width: 20%;
     margin: 8px 16px;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 
 .movie__poster{
     max-height: 300px;
     padding: 16px;
+    padding: 16px;
+}
+
+.movie:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .movie__title{
