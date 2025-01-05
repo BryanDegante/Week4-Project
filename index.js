@@ -4,18 +4,18 @@ async function main() {
     const movies = await fetch("https://www.omdbapi.com/?apikey=7def6ab0&s=Superman");
     const movieData = await movies.json();
     const movieList = movieData.Search
-    console.log(movieData)
-    console.log(movieList)
-    movieListEl.innerHTML = movieList.map((user) => moviesHtml(user)).join("");
+  movieListEl.innerHTML = movieList.map((user) => moviesHtml(user)).join("");
+  console.log(movieList)
 }
 
-function showUserMovies (id){
-  localStorage.setItem("id",id)
+function showUserMovies(imdbID) {
+  localStorage.setItem("imdbID", imdbID);
   window.location.href = `${window.location.origin}/movies.html`
 }
 
+
 function moviesHtml(user) {
-  return `<div class="movie" onclick = "showUserMovies(${user.id})" >
+  return `<div class="movie" onclick = "showUserMovies('${user.imdbID}')" >
                 <figure>
                   <img
                     src="${user.Poster}"
