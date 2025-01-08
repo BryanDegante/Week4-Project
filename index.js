@@ -20,15 +20,12 @@ function moviesHtml(user) {
                   <img
                     src="${user.Poster}"
                     alt=""
-                    class="movie__poster"
+                    class="movie__list--poster"
                   />
                 </figure>
                 <div class="movie__description">
                   <h3 class="movie__title"> ${user.Title}</h3>
-                  <div class="movie__rating">
-                  ${user.imdbID}
-                    <i class="fas fa-star"> </i>
-                  </div>
+                  <p class="movie__year">( ${user.Year} )</p>
                 </div>
               </div>
     `;

@@ -56,12 +56,7 @@ ul{
     display: flex;
 }
 
-/* 
-
-NAV
-
-*/
-
+/*    LANDING PAGE  */
 
 
 nav {
@@ -95,16 +90,10 @@ nav {
     font-weight: bold;
 }
 
-/*
-
-LANDING PAGE 
-
-*/
-
 
 /*
 
-MOVIES SECTION
+MOVIE LIST SECTION
 
 */
 
@@ -123,9 +112,8 @@ MOVIES SECTION
     cursor: pointer;
 }
 
-.movie__poster{
+.movie__list--poster{
     max-height: 300px;
-    padding: 16px;
     padding: 16px;
 }
 
@@ -135,4 +123,46 @@ MOVIES SECTION
 
 .movie__title{
     font-size: 16px;
+}
+
+/*
+
+SINGLE MOVIE SECTION
+
+*/
+
+#movie__info{
+    background-color: black;
+    height: 100vh;
+}
+
+.movie__description--single{
+    margin-top: 24px;
+    background-color: red;
+}
+
+.movie__wrapper{
+    display: flex;
+}
+
+.movie__poster--wrapper{
+    background-color: blue;
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie__description--poster{
+    width: 75%;
+    height: 95%;
+}
+
+.movie__description--text{
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
 }
