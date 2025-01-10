@@ -24,8 +24,8 @@ function moviesHtml(user) {
                   />
                 </figure>
                 <div class="movie__description">
-                  <h3 class="movie__title"> ${user.Title}</h3>
-                  <p class="movie__year">( ${user.Year} )</p>
+                  <h3 class="movie__title white"> ${user.Title}</h3>
+                  <p class="movie__year white">( ${user.Year} )</p>
                 </div>
               </div>
     `;

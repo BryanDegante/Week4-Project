@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,8 +9,11 @@
 
 a {
     text-decoration: none;
+    color: #fff
 }
-
+section{
+    background-color: black;
+}
 .link__hover--effect {
     position: relative;
 }
@@ -22,7 +25,7 @@ a {
     height: 3px;
     width: 0;
     right: 0;
-    background-color: blue;
+    background-color: #fff;
     transition: all 300ms ease;
 }
 
@@ -56,8 +59,19 @@ ul{
     display: flex;
 }
 
-/*    LANDING PAGE  */
+.white{
+    color: #fff
+}
 
+.blue{
+    color: rgba(0, 89, 255, 0.986);
+    font-weight: 600;
+}
+
+.bold{
+    font-weight: 700;
+}
+/*    LANDING PAGE  */
 
 nav {
     height: 100px;
@@ -90,6 +104,15 @@ nav {
     font-weight: bold;
 }
 
+header{
+    margin-top: 16px ;
+}
+
+.landing__text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*
 
@@ -107,8 +130,7 @@ MOVIE LIST SECTION
     width: 20%;
     margin: 8px 16px;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    transition: all 300ms ease;
     cursor: pointer;
 }
 
@@ -119,12 +141,17 @@ MOVIE LIST SECTION
 
 .movie:hover{
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    filter: brightness(50%);
+    transform: scale(1.1);
 }
 
-.movie__title{
-    font-size: 16px;
+.movie:active{
+    transform: scale(0.8);
 }
 
+.movie__description{
+    font-size: 18px;
+}
 /*
 
 SINGLE MOVIE SECTION
@@ -132,13 +159,25 @@ SINGLE MOVIE SECTION
 */
 
 #movie__info{
-    background-color: black;
     height: 100vh;
 }
 
 .movie__description--single{
     margin-top: 24px;
-    background-color: red;
+}
+
+.movie__description--header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.movie__rating{
+    padding-right: 24px;
+}
+
+.fa-star{
+    color: #FFD700;
 }
 
 .movie__wrapper{
@@ -146,11 +185,9 @@ SINGLE MOVIE SECTION
 }
 
 .movie__poster--wrapper{
-    background-color: blue;
     width:50%;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .movie__description--poster{
@@ -159,10 +196,18 @@ SINGLE MOVIE SECTION
 }
 
 .movie__description--text{
-    background-color: yellow;
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-evenly;
     width: 50%;
+}
+
+.sub-heading{
+    padding: 0px 16px 0 0;
+    font-size: 18px;
+}
+
+.movie__plot{
+    line-height: 2;
 }

@@ -2,17 +2,25 @@ const movieListEl = document.querySelector(".movie__description--single");
 const imdbID = localStorage.getItem("imdbID");
 
 async function renderMovies(imdbID) {
-  const movies = await fetch(
-    `https://www.omdbapi.com/?apikey=7def6ab0&i=${imdbID}`
-  );
-  const moviesData = await movies.json();
-  movieListEl.innerHTML = movieBody(moviesData);
+    const movies = await fetch(
+        `https://www.omdbapi.com/?apikey=7def6ab0&i=${imdbID}`
+    );
+    const moviesData = await movies.json();
+    movieListEl.innerHTML = movieBody(moviesData);
 }
 
 function movieBody(movie) {
-     return `<div class="movie__description--header">
-              <div class="movie__title--single">${movie.Title}</div>
-              <div class="movie__ratings"></div>
+    return `<div class="movie__description--header">
+              <div class="movie__title--single white">${movie.Title}</div>
+                <ul class="movie__ratings--list"> 
+                    <li class = "movie__rating">
+                    <span class="sub-heading white bold">IMDB Rating</span>
+                    <i class="fa-solid fa-star"></i>
+                    <span class = "blue">${movie.imdbRating}</span>
+                    </li>
+                    
+                </ul>
+            
             </div>
             <div class="movie__wrapper">
               <div class="movie__poster--wrapper">
@@ -21,14 +29,14 @@ function movieBody(movie) {
                 </div>
               </div>
               <div class="movie__description--text">
-                <div class="movie__realease"> <span class="white">Released</span>${movie.Released}</div>
-                <div class="moive__runtime"> <span class="white">Runtime</span>${movie.Runtime}</div>
-                <div class="movie__Age-rating"><span class="white">Rated</span>${movie.Rated}</div>
-                <div class="movie__Director"><span class="white">Director</span>${movie.Director}</div>
-                <div class="movie__writer"><span class="white">Writer</span>${movie.Writer}</div>
-                <div class="movie__actors"><span class="white">Actors</span>${movie.Actors}</div>
-                <div class="movie__genre"><span class="white">Genre</span>${movie.Genre}</div>
-                <div class="movie__plot"><span class="white">${movie.Plot}</span></div>
+                <div class="movie__realease"><span class="sub-heading white bold">Released</span><span class="blue">${movie.Released}</span></div>
+                <div class="movie__runtime"><span class="sub-heading white bold">Runtime</span><span class="blue">${movie.Runtime}</span></div>
+                <div class="movie__Age-rating"><span class="sub-heading white bold">Rated</span><span class="blue">${movie.Rated}</span></div>
+                <div class="movie__Director"><span class="sub-heading white bold">Director</span><span class="blue">${movie.Director}</span></div>
+                <div class="movie__writer"><span class="sub-heading white bold">Writer</span><span class="blue">${movie.Writer}</span></div>
+                <div class="movie__actors"><span class="sub-heading white bold">Actors</span><span class="blue">${movie.Actors}</span></div>
+                <div class="movie__genre"><span class="sub-heading white bold">Genre</span><span class="blue">${movie.Genre}</span></div>
+                <div class="movie__plot"><span class="white bold">${movie.Plot}</span></div>
               </div>
             </div >
                 `;
