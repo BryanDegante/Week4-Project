@@ -11,6 +11,10 @@ a {
     text-decoration: none;
     color: #fff
 }
+
+p{
+    margin-bottom: 24px;
+}
 section{
     background-color: black;
 }
@@ -114,6 +118,35 @@ header{
     align-items: center;
 }
 
+.landing__text--header{
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.search__wrapper{
+    background-color: red;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+
+.search__bar{
+    font-size: 16px;
+    text-align: center;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.fa-magnifying-glass{
+    position: absolute;
+    color: blue;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 8px;
+}
+
 /*
 
 MOVIE LIST SECTION
@@ -169,8 +202,13 @@ SINGLE MOVIE SECTION
 .movie__description--header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 24px;
 }
+
+.movie__title--single{
+    font-size: 32px;
+    font-weight: 900;}
 
 .movie__rating{
     padding-right: 24px;

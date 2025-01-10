@@ -11,14 +11,13 @@ async function renderMovies(imdbID) {
 
 function movieBody(movie) {
     return `<div class="movie__description--header">
-              <div class="movie__title--single white">${movie.Title}</div>
+              <h1 class="movie__title--single white">${movie.Title}</h1>
                 <ul class="movie__ratings--list"> 
                     <li class = "movie__rating">
                     <span class="sub-heading white bold">IMDB Rating</span>
                     <i class="fa-solid fa-star"></i>
                     <span class = "blue">${movie.imdbRating}</span>
                     </li>
-                    
                 </ul>
             
             </div>
