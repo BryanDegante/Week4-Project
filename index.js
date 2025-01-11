@@ -1,18 +1,28 @@
 const movieListEl = document.querySelector(".movies")
+let movieName = localStorage.getItem("movieName") || "batman";
 
-async function main() {
-    const movies = await fetch("https://www.omdbapi.com/?apikey=7def6ab0&s=Superman&type=movie");
+
+async function main(movieName) {
+    const movies = await fetch(`https://www.omdbapi.com/?apikey=7def6ab0&s=${movieName}&type=movie`);
     const movieData = await movies.json();
     const movieList = movieData.Search
   movieListEl.innerHTML = movieList.map((user) => moviesHtml(user)).join("");
-  console.log(movieList)
+  console.log(movieList);
+  console.log(movieName);
 }
+
+main(movieName);
 
 function showUserMovies(imdbID) {
   localStorage.setItem("imdbID", imdbID);
   window.location.href = `${window.location.origin}/movies.html`
 }
 
+async function onSearchChange(event) {
+  movieName = event.target.value; 
+  localStorage.setItem("movieName", movieName);
+  main(movieName);
+}
 
 function moviesHtml(user) {
   return `<div class="movie" onclick = "showUserMovies('${user.imdbID}')" >
@@ -31,5 +41,3 @@ function moviesHtml(user) {
     `;
 }
 
-
-main();

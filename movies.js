@@ -7,6 +7,7 @@ async function renderMovies(imdbID) {
     );
     const moviesData = await movies.json();
     movieListEl.innerHTML = movieBody(moviesData);
+    console.log(moviesData);
 }
 
 function movieBody(movie) {
