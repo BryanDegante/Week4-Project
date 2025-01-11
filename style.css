@@ -16,7 +16,7 @@ p{
     margin-bottom: 24px;
 }
 section{
-    background-color: black;
+    background-color: #000000f1;
 }
 .link__hover--effect {
     position: relative;
@@ -125,26 +125,45 @@ header{
 }
 
 .search__wrapper{
-    background-color: red;
     position: relative;
-    max-width: 800px;
-    width: 100%;
+    width: 1000px;
+    margin: 4px;
 }
 
 .search__bar{
-    font-size: 16px;
-    text-align: center;
-    padding: 8px 16px;
     width: 100%;
+    color: #fff;
+    border: 3px solid #fff;
+    font-size: 16px;
+    padding: 8px 24px;
+    border-radius: 15px;
+    outline: none;
+    background-color: #000000f3;
+    transition: all 300ms ease; 
 }
 
-.fa-magnifying-glass{
+.search__bar::placeholder{
+    opacity: 0.5;
+    color:#fff;
+
+}
+
+.search__bar:hover{
+    border: 3px solid #ffd90085;
+}
+
+.search__bar:focus{
+    border: 3px solid #FFD700;
+}
+
+.icon__wrapper{
     position: absolute;
-    color: blue;
+    font-size: 24px;
+    color: #24242493;
     top: 0;
     right: 0;
     bottom: 0;
-    margin: 8px;
+    margin: 4px 8px;
 }
 
 /*
