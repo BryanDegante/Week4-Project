@@ -16,7 +16,8 @@ main(movieName, page, year);
 
 function showUserMovies(imdbID) {
   localStorage.setItem("imdbID", imdbID);
-  window.location.href = `${window.location.origin}/movies.html`
+  window.location.href = `${window.location.origin}Week4-Project/movies.html`
+  console.log(window.location.origin);
 }
 
 async function onSearchChange(event) {
