@@ -6,7 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="movies.js" defer></script>
-    <script src="https://kit.fontawesome.com/4d8445498a.js"
+    <script
+      src="https://kit.fontawesome.com/4d8445498a.js"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -14,24 +15,30 @@
     <nav>
       <div class="nav__container">
         <a href="index.html">
-            <img src="./assets/blinker-icon.4f9b2663.png" class="logo" alt="" />
+          <img src="./assets/blinker-icon.4f9b2663.png" class="logo" alt="" />
         </a>
         <div class="link__list">
           <ul>
             <li>
-              <a href="index.html" class="nav__link link__hover--effect">Home</a>
-            </li>
-            <li>
-              <a href="#" class="nav__link link__hover--effect">Filter</a>
+              <a href="index.html" class="nav__link link__hover--effect"
+                >Home</a
+              >
             </li>
           </ul>
-          <button class="btn__menu">Menu</button>
         </div>
       </div>
     </nav>
     <section id="movie__info">
       <div class="container">
         <div class="row">
+          <div class="back__button--wrapper">
+            <button
+              class="back__button"
+              onclick="javascript:window.history.back();"
+            >
+              <i class="fa-solid fa-arrow-left"></i> Back
+            </button>
+          </div>
           <div class="movie__description--single">
             <div class="movie__description--header">
               <div class="movie__title--single"></div>

@@ -15,6 +15,11 @@ a {
 p{
     margin-bottom: 24px;
 }
+
+h3{
+    font-size: 18px;
+}
+
 section{
     background-color: #000000f1;
 }
@@ -116,6 +121,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .landing__text--header{
@@ -173,15 +179,58 @@ MOVIE LIST SECTION
 
 */
 
+.slider__wrapper{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 16px 0;
+    padding: 16px;
+}
+
+input[type="range"]{
+  width: 300px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
+}
+
+.year{
+    margin: 16px 0;
+    font-weight: 600;
+}
+
+.year__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reset__button{
+    background-color: #FFD700;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.reset__button:hover{
+    background-color: #ffd90085;
+}
+
 .movies{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 36px;
 }
 
 .movie{
-    width: 20%;
+    width: calc(100% / 6);
     margin: 8px 16px;
+    padding: 0 16px;
     text-align: center;
     transition: all 300ms ease;
     cursor: pointer;
@@ -189,6 +238,7 @@ MOVIE LIST SECTION
 
 .movie__list--poster{
     max-height: 300px;
+    max-width: 300px;
     padding: 16px;
 }
 
@@ -204,18 +254,29 @@ MOVIE LIST SECTION
 
 .movie__description{
     font-size: 18px;
+    font-weight: 700;
 }
 
 .page__list{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .page__link{
     color:#FFD700;
     cursor: pointer;
-    padding-right: 12px;
+    padding: 0 12px 12px 0;
+    transition: all 300ms ease; 
+}
+
+.page__link:hover{
+    opacity: 0.5;
+}
+
+.page__link:focus{
+    color: blue;
 }
 /*
 
@@ -225,6 +286,19 @@ SINGLE MOVIE SECTION
 
 #movie__info{
     height: 100vh;
+}
+
+.back__button--wrapper{
+    padding:0 0 24px 0;
+}
+
+.back__button{
+    background-color: #FFD700;
+    color: #000;
+    padding: 8px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 300ms ease;
 }
 
 .movie__description--single{
@@ -262,7 +336,6 @@ SINGLE MOVIE SECTION
 
 .movie__description--poster{
     width: 75%;
-    height: 95%;
 }
 
 .movie__description--text{
@@ -290,5 +363,127 @@ FOOTER
 */
 
 footer{
-    background-color: #f11515;
+    background-color: #242424;
+}
+
+@media(max-width: 1024px){
+    .search__wrapper {
+            width: 700px;
+        }
+
+    .slider__wrapper{
+        margin: 0 24px 16px 0;
+    }
+
+    .movie{
+        width: calc(100% / 4);
+    }
+}
+
+@media(max-width: 768px){
+    .container{
+        padding: 40px 24px;
+    }
+    .landing__text--para{
+        font-size: 16px;
+    }
+    
+    .slider__wrapper{
+        justify-content: center;
+        margin: 0 0 16px 0;
+    }
+    
+    .reset__button{
+        padding: 8px 42px;
+    }
+    
+    .movie__description{
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .movie{
+        width: calc(100% /3);
+    }
+    
+    .page__link{
+        font-size: 18px;
+    }
+
+    .movie__title--single{
+        font-size: 24px;
+    }
+
+    .movie__wrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .movie__poster--wrapper{
+        justify-content: center;
+        width: 100%;
+        padding: 0 0 16px 0
+    }
+
+    .movie__description--poster{
+        width: 25%;
+    }
+
+    .sub-heading{
+        font-size: 16px;
+    }
+
+    .movie__description--text{
+        width: 100%;
+        line-height: 2;
+    }
+    
+}
+
+@media(max-width: 550px){
+
+    .logo {
+            max-width: 150px;
+            max-height: 50px;
+        }
+
+    .movie__description--header{
+        flex-direction: column;
+    }
+
+    .movie__rating{
+        padding: 8px 0 0 0;
+    }
+
+    .movie__title--single{
+        font-size: 20px;
+    }
+
+    .landing__text--header{
+        font-size: 32px;
+    }
+
+    .search__wrapper {
+        width: 400px;
+    }
+
+    .reset__button {
+       padding: 16px 50px;
+    }
+
+    .movie{
+        padding: 0;
+    }
+
+    .movie__description--poster{
+        width: 150px;
+    }
+
+    .movie__description--text{
+        line-height: 1.5;
+    }
+
+    
+
 }
