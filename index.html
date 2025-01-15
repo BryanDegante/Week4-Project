@@ -36,6 +36,7 @@
                 <button class="filter__choice--button"  onclick="changeType('movie')">Movie
                 </button>
                 <button class="filter__choice--button"  onclick="changeType('show')">Show</button>
+                <button class="filter__choice--button"  onclick="changeType('game')">Game</button>
               </div>
             </div>
           </div>
@@ -47,7 +48,7 @@
           <div class="row">
             <div class="landing__text white">
               <h1 class="landing__text--header">
-                Discover your next favorite movie
+                Discover your next favorite watch
               </h1>
               <p class="landing__text--para">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -76,7 +77,7 @@
             <div class="slider__wrapper">
               <div class="year__wrapper">
 
-                <input type="range" min="1900" max="2025" class="slider" id="slider__range" oninput="movieYear()" />
+                <input type="range" min="1900" max="2025" class="slider" id="slider__range" onchange="movieYear()" />
                 <p class ="year  white">Filter By Year: <span id="demo"></span></p>
                 <button class="reset__button" onclick="resetMovies()">Reset</button>
               </div>

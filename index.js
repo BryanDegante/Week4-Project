@@ -9,8 +9,16 @@ async function main(movieName, type, page, year) {
   const movies = await fetch(`https://www.omdbapi.com/?apikey=7def6ab0&s=${movieName}&type=${type}&page=${page}&y=${year}`);
   const movieData = await movies.json();
   const movieList = movieData.Search;
-  movieListEl.innerHTML = movieList.map((user) => moviesHtml(user)).join("");
-  pageListEl.innerHTML = moviePages(movieData.totalResults, movieName);
+  const check = movieData.Response;
+  if (check === 'True') {
+    movieListEl.innerHTML = movieList.map((user) => moviesHtml(user)).join("");
+    pageListEl.innerHTML = moviePages(movieData.totalResults, movieName);
+    
+  }
+  else if (check == 'False'){
+    alert('No title Found. Please try again!!');
+  }
+  
 }
 
 main(movieName, type, page, year);
@@ -30,7 +38,7 @@ function moviePages(totalResults, movieName) {
   let pages = Math.ceil(totalResults / 10);
   let pageList = [];
   for (let i = 1; i <= pages; i++) {
-    pageList.push(`<a class = "page__link" onclick = "main('${movieName}',type,${i},year)">${i}</a>`)
+    pageList.push(`<a class = "page__link" onclick = "main('${movieName}','${type}',${i},'${year}')">${i}</a>`)
   }
   return pageList.join("");
 }
@@ -85,6 +93,9 @@ function changeType(elm) {
   }
   else if (elm == 'show') {
     type = 'series';
+  }
+  else if (elm == 'game') {
+    type = 'game';
   }
 
   main(movieName, type, page, year);
