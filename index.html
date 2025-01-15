@@ -16,14 +16,28 @@
     <section id="landing">
       <nav>
         <div class="nav__container">
+          <a href="index.html">
           <img src="./assets/blinker-icon.4f9b2663.png" class="logo" alt="" />
+          </a>
           <div class="link__list">
             <ul>
               <li>
-                <a href="#" class="nav__link link__hover--effect">Home</a>
+                <a href="index.html" class="nav__link link__hover--effect">Home</a>
               </li>
               
             </ul>
+            <button class="filter__menu filter__button" onclick="openMenu()" >Filter</button>
+            <div class="filter__backdrop">
+              <button class=" filter__menu--close" onclick="closeMenu()">
+                        <i class="fas fa-times"></i>
+              </button>
+              <div class="filter__choices">
+                <h1 class = "filter__choice--text">Filter by:</h1>
+                <button class="filter__choice--button"  onclick="changeType('movie')">Movie
+                </button>
+                <button class="filter__choice--button"  onclick="changeType('show')">Show</button>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -62,7 +76,7 @@
             <div class="slider__wrapper">
               <div class="year__wrapper">
 
-                <input type="range" min="1900" max="2025" class="slider" id="slider__range" onchange="movieYear()" />
+                <input type="range" min="1900" max="2025" class="slider" id="slider__range" oninput="movieYear()" />
                 <p class ="year  white">Filter By Year: <span id="demo"></span></p>
                 <button class="reset__button" onclick="resetMovies()">Reset</button>
               </div>
@@ -78,10 +92,17 @@
     </main>
     <footer>
       <div class="container">
-        <div class="row">
+        <div class="row footer__row">
+          <figure>
+            <img
+              class="footer__logo--img"
+              src="./assets/blinker-icon.4f9b2663.png"
+              alt=""
+            />
+          </figure>
+          <div class="footer__copyright">Copyright © 2025 Bryan Degante</div>
         </div>
       </div>
-      
     </footer>
   </body>
 </html>

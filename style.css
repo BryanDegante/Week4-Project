@@ -66,6 +66,7 @@ li {
 
 ul{
     display: flex;
+    align-items: center;
 }
 
 .white{
@@ -99,6 +100,7 @@ nav {
 }
 
 .logo {
+    color:#FFD700;
     max-width: 200px;
     max-height: 50px;
 }
@@ -111,6 +113,90 @@ nav {
     margin-right: 24px;
     font-size: 20px;
     font-weight: bold;
+}
+
+.filter__menu {
+    color: #000;
+    background-color: #FFD700;
+}
+
+.filter__button{
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.filter__backdrop {
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.filter--open {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.filter--open .filter__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.filter__menu--close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 48px;
+    color:#FFD700;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    transition: all 300ms ease;
+}
+
+.filter__button:hover{
+    opacity: 0.5;}
+
+.filter__choices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter__choice--text{
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.filter__choice--button{
+    margin: 16px 0;
+    padding: 24px 48px;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: #FFD700;
+    border-radius: 24px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.filter__choice--button:hover,
+.filter__menu--close:hover{
+    opacity: 0.5;
 }
 
 header{
@@ -188,11 +274,12 @@ MOVIE LIST SECTION
 
 input[type="range"]{
   width: 300px;
+  cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
     height: 15px;
-    background: #ccc;
+    background: #FFD700;
     border-radius: 16px;
 }
 
@@ -364,6 +451,25 @@ FOOTER
 
 footer{
     background-color: #242424;
+    padding: 2% 0;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__logo--img{
+    width: 300px;
+}
+
+.footer__copyright{
+    
+    color: white;
+    margin: 16px 0 0 0;
+
 }
 
 @media(max-width: 1024px){
@@ -465,7 +571,7 @@ footer{
     }
 
     .search__wrapper {
-        width: 400px;
+        width: 350px;
     }
 
     .reset__button {
@@ -481,9 +587,11 @@ footer{
     }
 
     .movie__description--text{
-        line-height: 1.5;
+        line-height: 1.2;
     }
 
-    
+    .footer__logo--img{
+        width: 200px
+    }
 
 }
