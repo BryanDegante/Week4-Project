@@ -24,9 +24,9 @@ function movieBody(movie) {
             </div>
             <div class="movie__wrapper">
               <div class="movie__poster--wrapper">
-                <div class="movie__description--poster">
+                <figure class="movie__description--poster">
                   <img src="${movie.Poster}" class="movie__poster" alt="" />
-                </div>
+                </figure>
               </div>
               <div class="movie__description--text">
                 <div class="movie__realease"><span class="sub-heading white bold">Released</span><span class="blue">${movie.Released}</span></div>
@@ -40,6 +40,10 @@ function movieBody(movie) {
               </div>
             </div >
                 `;
+}
+
+function goBack() {
+  window.location.href = `${window.location.origin}/movies.html`
 }
 
 renderMovies(imdbID);

@@ -1,15 +1,16 @@
 const movieListEl = document.querySelector(".movies")
 const pageListEl = document.querySelector(".page__list");
-let movieName = localStorage.getItem("movieName") || "None";
+let movieName = localStorage.getItem("movieName") || "Avengers";
 let page = 1;
 let year = '';
-let type = "series";
+let type = "";
 
 async function main(movieName, type, page, year) {
   const movies = await fetch(`https://www.omdbapi.com/?apikey=7def6ab0&s=${movieName}&type=${type}&page=${page}&y=${year}`);
   const movieData = await movies.json();
   const movieList = movieData.Search;
   const check = movieData.Response;
+  
   if (check === 'True') {
     movieListEl.innerHTML = movieList.map((user) => moviesHtml(user)).join("");
     pageListEl.innerHTML = moviePages(movieData.totalResults, movieName);
@@ -25,7 +26,7 @@ main(movieName, type, page, year);
 
 function showUserMovies(imdbID) {
   localStorage.setItem("imdbID", imdbID);
-  window.location.href = `${window.location.origin}/Week4-Project/movies.html`
+  window.location.href = `${window.location.origin}/movies.html`
 }
 
 async function onSearchChange(event) {
@@ -67,15 +68,13 @@ function movieYear() {
   var output = document.getElementById("demo");
   output.innerHTML = slider.value;
   year = (slider.value).toString();
-  main(movieName, type, page, year);
 }
 
-function resetMovies() {
+function resetYear() {
   page = 1;
   year = '';
-  document.getElementById("slider__range").value = 1900;
+  document.getElementById("slider__range").value = '';
   document.getElementById("demo").innerHTML = '';
-  main(movieName, type, page, year);
 }
 
 function openMenu() {
@@ -98,6 +97,19 @@ function changeType(elm) {
     type = 'game';
   }
 
-  main(movieName, type, page, year);
+}
+
+function resetFilters(){
+  resetYear();
+  type = '';
+  closeMenu();
+
+  main(movieName,type,page,year)
+}
+
+function applyFilters() {
+  changeType();
+  
+  main(movieName, type, page, year)
   closeMenu();
 }
