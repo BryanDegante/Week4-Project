@@ -23,11 +23,9 @@ function movieBody(movie) {
             
             </div>
             <div class="movie__wrapper">
-              <div class="movie__poster--wrapper">
                 <figure class="movie__description--poster">
                   <img src="${movie.Poster}" class="movie__poster" alt="" />
                 </figure>
-              </div>
               <div class="movie__description--text">
                 <div class="movie__realease"><span class="sub-heading white bold">Released</span><span class="blue">${movie.Released}</span></div>
                 <div class="movie__runtime"><span class="sub-heading white bold">Runtime</span><span class="blue">${movie.Runtime}</span></div>

@@ -47,12 +47,10 @@ section{
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
-
 }
 
 .container {
-    padding: 50px 0;
-    width: 100%;
+    padding: 96px 0;
 }
 
 img{ 
@@ -82,6 +80,7 @@ ul{
     font-weight: 700;
 }
 /*    LANDING PAGE  */
+
 
 nav {
     height: 100px;
@@ -277,6 +276,10 @@ MOVIE LIST SECTION
 
 */
 
+#movies__main{
+    padding: 0 32px;
+}
+
 .slider__wrapper{
     display: flex;
     justify-content: flex-end;
@@ -387,7 +390,7 @@ SINGLE MOVIE SECTION
 */
 
 #movie__info{
-    height: 100vh;
+    padding: 0 32px;
 }
 
 .back__button--wrapper{
@@ -411,6 +414,7 @@ SINGLE MOVIE SECTION
 
 .movie__description--single{
     margin-top: 24px;
+    padding: 50px 0;
 }
 
 .movie__description--header{
@@ -434,16 +438,19 @@ SINGLE MOVIE SECTION
 
 .movie__wrapper{
     display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
 }
 
-.movie__poster--wrapper{
-    width:50%;
-}
 
 .movie__description--poster{
-    max-width: 400px;
-    max-height: 500px;
+    width: 50%;
 }
+
+.movie__poster{
+    max-width: 400px;
+}
+
 
 .movie__description--text{
     display: flex;
@@ -474,6 +481,10 @@ footer{
     padding: 2% 0;
 }
 
+.footer__container{
+    padding: 50px 0
+}
+
 .footer__row {
     display: flex;
     flex-direction: column;
@@ -492,6 +503,37 @@ footer{
 
 }
 
+@media(min-height: 1280px){
+    .movie{
+        width: calc(100%/4);
+    }
+
+
+
+    .movie__wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+    .movie__description--poster{
+        display: flex;
+        justify-content: center;
+        padding: 0 0 32px 0;
+        margin-bottom: 16px;
+    }
+
+    .movie__description--text{
+        line-height: 2.5;
+    }
+
+@media(min-height: 1920px) {
+    .movie {
+        width: calc(100%/5);
+    }
+
+}
+
 @media(max-width: 1024px){
     .search__wrapper {
             width: 700px;
@@ -504,14 +546,20 @@ footer{
     .movie{
         width: calc(100% / 4);
     }
+
+    .movie__description--poster{
+        max-width: 300px;
+    }
 }
 
 @media(max-width: 768px){
-    .container{
-        padding: 40px 24px;
-    }
+    
     .landing__text--para{
         font-size: 16px;
+    }
+
+    .landing__text--header{
+        font-size: 40px ;
     }
     
     .slider__wrapper{
@@ -526,6 +574,10 @@ footer{
     .movie__description{
         font-size: 16px;
         font-weight: 700;
+    }
+
+    .search__wrapper {
+        width: 550px;
     }
     
     .movie{
@@ -544,13 +596,6 @@ footer{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
-    .movie__poster--wrapper{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 0 0 16px 0
     }
 
     .movie__description--poster{
