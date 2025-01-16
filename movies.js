@@ -3,7 +3,7 @@ const imdbID = localStorage.getItem("imdbID");
 
 async function renderMovies(imdbID) {
     const movies = await fetch(
-        `https://www.omdbapi.com/?apikey=7def6ab0&i=${imdbID}`
+        `https://www.omdbapi.com/?apikey=7def6ab0&i=${imdbID}&plot=full`
     );
     const moviesData = await movies.json();
     movieListEl.innerHTML = movieBody(moviesData);

@@ -1,6 +1,6 @@
 const movieListEl = document.querySelector(".movies")
 const pageListEl = document.querySelector(".page__list");
-let movieName = localStorage.getItem("movieName") || "Avengers";
+let movieName = localStorage.getItem("movieName") || "" ;
 let page = 1;
 let year = '';
 let type = "";
@@ -10,13 +10,16 @@ async function main(movieName, type, page, year) {
   const movieData = await movies.json();
   const movieList = movieData.Search;
   const check = movieData.Response;
-  
   if (check === 'True') {
     movieListEl.innerHTML = movieList.map((user) => moviesHtml(user)).join("");
     pageListEl.innerHTML = moviePages(movieData.totalResults, movieName);
+    document.getElementById("results__number").innerHTML = movieData.totalResults;
     
   }
-  else if (check == 'False'){
+  else if (check == 'False' ){
+    document.getElementById("results__number").innerHTML = 'none';
+    movieListEl.innerHTML = '';
+    pageListEl.innerHTML = ''; 
     alert('No title Found. Please try again!!');
   }
   
